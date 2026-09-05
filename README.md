@@ -11,4 +11,4 @@ This repo is a placeholder. It's where your team's **Exomine client** project go
 
 ## Issues
 
-This repo's Issues tab tracks the requirements for your team's Exomine API build. Work through them there.
+The requirements for your team's Exomine API build are tracked as issues in your team's **API repo**, not here: https://github.com/Evening-Cohort-32/Exomine-API-api-qcomsw/issues
