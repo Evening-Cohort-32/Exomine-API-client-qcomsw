@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+:root {
+    --background-color: #f4f6f8;
+    --card-color: #ffffff;
+    --accent-color: #2a9d8f;
+    --text-color: #1a1a2e;
+    --subtle-text: #6b7280;
+    --border-color: #e2e8f0;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: var(--font-body);
+    color: var(--text-color);
+    padding: 2rem;
+}
+
+.title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+}
+
+.colonyTitle {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: right;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    color: #3D3D3D;
+}
+
+.topSection {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+    margin-bottom: 3rem;
+}
+
+.selectors {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    min-width: 220px;
+}
+
+.governor,
+.facilities {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 4rem
+}
+
+.governor label,
+.facilities label {
+    font-size: 0.9rem;
+    color: var(--subtle-text);
+}
+
+select {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    background-color: var(--card-color);
+    color: var(--text-color);
+    cursor: pointer;
+    min-width: 180px;
+}
+
+select:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+.colonyMinerals {
+    flex: 1;
+    background-color: var(--card-color);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    min-height: 120px;
+    max-height: 160px;
+}
+
+.sectionTitle {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    text-align: center;
+    margin-right: auto;
+    letter-spacing: 1px;
+    color: #3D3D3D;
+}
+
+.bottomRow {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.facilityMinerals {
+    flex: 3;
+    background-color: var(--card-color);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    min-height: 320px;
+}
+.mineral-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.spaceCart {
+    flex: 1;
+    background-color: var(--card-color);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: -2rem;
+}
+
+.spaceCart h2 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.cartItems {
+    flex: 1;
+}
+
+.purchase-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: var(--card-color);
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    align-self: center;
+}
+
+.purchase-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+debugger 
