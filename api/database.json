@@ -159,7 +159,7 @@
       "id": 1,
       "facilityId": 1,
       "mineralId": 1,
-      "quantity": 36
+      "quantity": 35
     },
     {
       "id": 2,
@@ -275,7 +275,7 @@
       "id": 1,
       "colonyId": 1,
       "mineralId": 1,
-      "quantity": 22
+      "quantity": 23
     },
     {
       "id": 2,
