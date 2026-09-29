@@ -5,17 +5,16 @@ export const makePurchase = async () => {
   let isNewInventory = false
 
   let selectedGovernor = await fetch(
-    `http://localhost:3000/governors/${currentState.selectedGovernor}`,
+    `https://localhost:7080/api/governors/${currentState.selectedGovernor}`,
   ).then((res) => res.json());
 
   const allColonyMinerals = await fetch(
-    "http://localhost:3000/colonyMinerals/",
+    "https://localhost:7080/api/colonyInventories/",
   ).then((res) => res.json());
 
   let selectedColonyMinerals = {};
 
   for (const colonyMineral of allColonyMinerals) {
-    debugger
     if (
       colonyMineral.colonyId === selectedGovernor.colonyId &&
       parseInt(colonyMineral.mineralId) ===
