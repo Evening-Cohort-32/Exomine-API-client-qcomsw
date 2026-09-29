@@ -2,7 +2,7 @@ import { getState, setGovernor } from "./TransientState.js"
 
 export const governorOptions = async() =>{
     const state = getState()
-    const allGovernors = await fetch("http://localhost:3000/governors").then(res => res.json())
+    const allGovernors = await fetch("https://localhost:7080/api/governors").then(res => res.json())
     let html = `
     <label for="governors">Choose a governor</label>
     <select id="governors" name ="governors">

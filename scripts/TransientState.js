@@ -1,5 +1,3 @@
-import { FacilityMinerals } from "./FacilityMinerals.js";
-
 export const state = {}; //Empty Object
 
 // Updates the chosen governor. Also clears the facility and mineral
@@ -55,14 +53,13 @@ export const purchaseMaterial = async (selectedColonyMineral,selectedColonyId,is
       }),
    };
     fetch(
-      `http://localhost:3000/colonyMinerals/${selectedColonyMineral.id}`,
+      `https://localhost:7080/api/colonyInventories/${selectedColonyMineral.id}`,
       colonyPutOptions,
     );
   }
 
   //Post option
   else if (isNewInventory === true){
-    debugger
       let colonyPostOptions = {
       method: "post",
       headers: {
@@ -74,7 +71,7 @@ export const purchaseMaterial = async (selectedColonyMineral,selectedColonyId,is
         quantity: 1,
       }),
    };
-   fetch(`http://localhost:3000/colonyMinerals`,colonyPostOptions)
+   fetch(`https://localhost:7080/api/colonyInventories`,colonyPostOptions)
   }
 
   //Remove 1 ton from facility mineral quantity
@@ -87,12 +84,12 @@ export const purchaseMaterial = async (selectedColonyMineral,selectedColonyId,is
     },
     body:JSON.stringify({
       id: selectedFacilityMineral.id,
-      facilityId: selectedFacilityMineral.facilityId,
+      miningFacilityId: selectedFacilityMineral.miningFacilityId,
       mineralId: state.selectedMineral,
       quantity: selectedFacilityMineral.quantity - 1,
     })
   }
-  fetch(`http://localhost:3000/facilityMinerals/${selectedFacilityMineral.id}`,facilityPutOption)
+  fetch(`https://localhost:7080/api/facilityInventory/${selectedFacilityMineral.id}`,facilityPutOption)
   document.dispatchEvent(new CustomEvent("stateChanged"));
 
 }
@@ -100,10 +97,10 @@ export const purchaseMaterial = async (selectedColonyMineral,selectedColonyId,is
 
 //funstion for finding selected facilityMineral
 const findSelectedFacilityMineral = async () =>{
-  let allFacilityMinerals = await fetch(`http://localhost:3000/facilityMinerals`).then(res => res.json())
+  let allFacilityMinerals = await fetch(`https://localhost:7080/api/facilityInventory`).then(res => res.json())
   for (const facilityMineral of allFacilityMinerals) {
     if(facilityMineral.mineralId === state.selectedMineral &&
-      facilityMineral.facilityId === state.selectedFacility
+      facilityMineral.miningFacilityId === state.selectedFacility
     )
     return facilityMineral
   }

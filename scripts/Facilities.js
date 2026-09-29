@@ -1,11 +1,11 @@
 import { state, setFacility } from './TransientState.js'
 
 export const Facilities = async () => {
-    const response = await fetch("http://localhost:3000/facilities")
+    const response = await fetch("https://localhost:7080/api/miningfacilities")
     const facilities = await response.json()
 
     const activeFacilities = facilities.filter((facility) => {
-        return facility.active === true
+        return facility.isActive === true
     })
 
     let html = `<section class="facilities">

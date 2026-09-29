@@ -8,12 +8,12 @@ export const colonyInventory = async () => {
   }
 
   const governorResponse = await fetch(
-    `http://localhost:3000/governors/${state.selectedGovernor}?_expand=colony`,
+    `https://localhost:7080/api/governors/${state.selectedGovernor}`,
   );
   const governor = await governorResponse.json();
 
   const colonyMineralsResponse = await fetch(
-    "http://localhost:3000/colonyMinerals?_expand=mineral",
+    "https://localhost:7080/api/colonyInventories",
   );
   const allColonyMinerals = await colonyMineralsResponse.json();
 
@@ -21,10 +21,10 @@ export const colonyInventory = async () => {
     (colonyMineral) => colonyMineral.colonyId === governor.colonyId,
   );
 
-  let html = `<h2>${governor.colony.name} Minerals</h2>
+  let html = `<h2>${governor.colonyName} Minerals</h2>
     <ul>`;
   for (const colonyMineral of matchingColonyMinerals) {
-    html += `<li>${colonyMineral.quantity} tons of ${colonyMineral.mineral.name}</li>`;
+    html += `<li>${colonyMineral.quantity} tons of ${colonyMineral.mineralName}</li>`;
   }
   html += `</ul>`;
 
